@@ -123,7 +123,9 @@ def main(m, n):
     beta_1 = sum([norm_x[i][1] * y_av[i] for i in range(len(norm_x))]) / n
     beta_2 = sum([norm_x[i][2] * y_av[i] for i in range(len(norm_x))]) / n
     beta_3 = sum([norm_x[i][3] * y_av[i] for i in range(len(norm_x))]) / n
-
+    # beta_s потрібні для того, щоб знайти коефіцієнт t для кожного з них, а потім за допомогою нього ми дізнаємося чи є коефіцієнт b_s
+    # значимим, чи його можна виключити з рівняння регресії.
+    
     t = [abs(beta_0) / s_beta_S, abs(beta_1) / s_beta_S, abs(beta_2) / s_beta_S, abs(beta_3) / s_beta_S]
 
     f3 = f_1 * f_2
